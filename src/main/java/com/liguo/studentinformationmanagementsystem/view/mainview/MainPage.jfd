@@ -1,0 +1,60 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.12" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundleName": "form"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+					"$horizontalGroup": "par l {seq l {space :::p, comp menuBar1::::722:x, space :::p}}"
+					"$verticalGroup": "par l {seq l {space :::p, comp menuBar1:::p:38:p, space ::495:x}}"
+				} ) {
+					name: "contentPanel"
+					add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+						name: "menuBar1"
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu1"
+							"text": new FormMessage( null, "menu1.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem2"
+								"text": new FormMessage( null, "menuItem2.text" )
+							} )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem3"
+								"text": new FormMessage( null, "menuItem3.text" )
+							} )
+							add( new FormComponent( "javax.swing.JCheckBoxMenuItem" ) {
+								name: "checkBoxMenuItem1"
+								"text": new FormMessage( null, "checkBoxMenuItem1.text" )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu2"
+							"text": new FormMessage( null, "menu2.text" )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu3"
+							"text": new FormMessage( null, "menu3.text" )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu4"
+							"text": new FormMessage( null, "menu4.text" )
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 760, 595 )
+		} )
+	}
+}
