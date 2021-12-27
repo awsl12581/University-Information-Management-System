@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+
+#spring本身的配置
+spring:
+  datasource:
+    #基础配置
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: awsl
+    password: 123456
+    #druid配置
+    druid:
+      initialSize: 5
+      minIdle: 5
+      maxActive: 20
+      maxWait: 60000
+      timeBetweenEvictionRunsMillis: 60000
+      minEvictableIdleTimeMillis: 300000
+      validationQuery: SELECT 1 FROM DUAL
+      testWhileIdle: true
+      testOnBorrow: false
+      testOnReturn: false
+      poolPreparedStatements: true
+  #上传限制，导入数据时使用
+  servlet:
+    multipart:
+      max-request-size: 100MB
+      max-file-size: 50MB
+
+#mybatis设置
+mybatis:
+  mapper-locations: classpath:mapping/*Mapper.xml
+  type-aliases-package: com.liguo.studentinformationmanagementsystem.pojo
+  configuration:
+    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+
+#pagehelper设置，分页
+pagehelper:
+  helperDialect: mysql
+  #分页合理化
+  reasonable: true
+  #支持mapper接口
+  supportMethodsArguments: true
+  params: count=countSql

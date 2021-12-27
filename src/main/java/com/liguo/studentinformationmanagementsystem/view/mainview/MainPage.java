@@ -26,12 +26,17 @@ public class MainPage extends JFrame {
         contentPanel = new JPanel();
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
-        menuItem2 = new JMenuItem();
-        menuItem3 = new JMenuItem();
-        checkBoxMenuItem1 = new JCheckBoxMenuItem();
         menu2 = new JMenu();
-        menu3 = new JMenu();
+        menuItem3 = new JMenuItem();
         menu4 = new JMenu();
+        menuItem4 = new JMenuItem();
+        menu5 = new JMenu();
+        menuItem5 = new JMenuItem();
+        menu6 = new JMenu();
+        menuItem6 = new JMenuItem();
+        menu7 = new JMenu();
+        menuItem7 = new JMenuItem();
+        menu3 = new JMenu();
 
         //======== this ========
         var contentPane = getContentPane();
@@ -40,12 +45,13 @@ public class MainPage extends JFrame {
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-            dialogPane.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border.
-            EmptyBorder( 0, 0, 0, 0) , "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e", javax. swing. border. TitledBorder. CENTER, javax. swing
-            . border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069al\u006fg" ,java .awt .Font .BOLD ,12 ),
-            java. awt. Color. red) ,dialogPane. getBorder( )) ); dialogPane. addPropertyChangeListener (new java. beans. PropertyChangeListener( )
-            { @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062or\u0064er" .equals (e .getPropertyName () ))
-            throw new RuntimeException( ); }} );
+            dialogPane.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.
+            swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing.border
+            .TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dialo\u0067"
+            ,java.awt.Font.BOLD,12),java.awt.Color.red),dialogPane. getBorder
+            ()));dialogPane. addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java
+            .beans.PropertyChangeEvent e){if("borde\u0072".equals(e.getPropertyName()))throw new RuntimeException
+            ();}});
             dialogPane.setLayout(new BorderLayout());
 
             //======== contentPanel ========
@@ -58,37 +64,63 @@ public class MainPage extends JFrame {
                     {
                         menu1.setText(bundle.getString("menu1.text"));
 
-                        //---- menuItem2 ----
-                        menuItem2.setText(bundle.getString("menuItem2.text"));
-                        menu1.add(menuItem2);
+                        //======== menu2 ========
+                        {
+                            menu2.setText(bundle.getString("menu2.text"));
 
-                        //---- menuItem3 ----
-                        menuItem3.setText(bundle.getString("menuItem3.text"));
-                        menu1.add(menuItem3);
+                            //---- menuItem3 ----
+                            menuItem3.setText(bundle.getString("menuItem3.text"));
+                            menu2.add(menuItem3);
+                        }
+                        menu1.add(menu2);
 
-                        //---- checkBoxMenuItem1 ----
-                        checkBoxMenuItem1.setText(bundle.getString("checkBoxMenuItem1.text"));
-                        menu1.add(checkBoxMenuItem1);
+                        //======== menu4 ========
+                        {
+                            menu4.setText(bundle.getString("menu4.text"));
+
+                            //---- menuItem4 ----
+                            menuItem4.setText(bundle.getString("menuItem4.text"));
+                            menu4.add(menuItem4);
+                        }
+                        menu1.add(menu4);
+
+                        //======== menu5 ========
+                        {
+                            menu5.setText(bundle.getString("menu5.text"));
+
+                            //---- menuItem5 ----
+                            menuItem5.setText(bundle.getString("menuItem5.text"));
+                            menu5.add(menuItem5);
+                        }
+                        menu1.add(menu5);
+
+                        //======== menu6 ========
+                        {
+                            menu6.setText(bundle.getString("menu6.text"));
+
+                            //---- menuItem6 ----
+                            menuItem6.setText(bundle.getString("menuItem6.text"));
+                            menu6.add(menuItem6);
+                        }
+                        menu1.add(menu6);
+
+                        //======== menu7 ========
+                        {
+                            menu7.setText(bundle.getString("menu7.text"));
+
+                            //---- menuItem7 ----
+                            menuItem7.setText(bundle.getString("menuItem7.text"));
+                            menu7.add(menuItem7);
+                        }
+                        menu1.add(menu7);
                     }
                     menuBar1.add(menu1);
-
-                    //======== menu2 ========
-                    {
-                        menu2.setText(bundle.getString("menu2.text"));
-                    }
-                    menuBar1.add(menu2);
 
                     //======== menu3 ========
                     {
                         menu3.setText(bundle.getString("menu3.text"));
                     }
                     menuBar1.add(menu3);
-
-                    //======== menu4 ========
-                    {
-                        menu4.setText(bundle.getString("menu4.text"));
-                    }
-                    menuBar1.add(menu4);
                 }
 
                 GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
@@ -97,18 +129,18 @@ public class MainPage extends JFrame {
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(menuBar1, GroupLayout.DEFAULT_SIZE, 722, Short.MAX_VALUE)
+                            .addComponent(menuBar1, GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
                             .addContainerGap())
                 );
                 contentPanelLayout.setVerticalGroup(
                     contentPanelLayout.createParallelGroup()
                         .addGroup(contentPanelLayout.createSequentialGroup()
                             .addContainerGap()
-                            .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, 38, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(495, Short.MAX_VALUE))
+                            .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap(563, Short.MAX_VALUE))
                 );
             }
-            dialogPane.add(contentPanel, BorderLayout.CENTER);
+            dialogPane.add(contentPanel, BorderLayout.NORTH);
         }
         contentPane.add(dialogPane, BorderLayout.CENTER);
         pack();
@@ -122,11 +154,16 @@ public class MainPage extends JFrame {
     private JPanel contentPanel;
     private JMenuBar menuBar1;
     private JMenu menu1;
-    private JMenuItem menuItem2;
-    private JMenuItem menuItem3;
-    private JCheckBoxMenuItem checkBoxMenuItem1;
     private JMenu menu2;
-    private JMenu menu3;
+    private JMenuItem menuItem3;
     private JMenu menu4;
+    private JMenuItem menuItem4;
+    private JMenu menu5;
+    private JMenuItem menuItem5;
+    private JMenu menu6;
+    private JMenuItem menuItem6;
+    private JMenu menu7;
+    private JMenuItem menuItem7;
+    private JMenu menu3;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }
