@@ -4,7 +4,13 @@
 
 package com.liguo.studentinformationmanagementsystem.view.mainview;
 
+import com.liguo.studentinformationmanagementsystem.entity.User;
+import com.liguo.studentinformationmanagementsystem.view.component.StudentList;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+
 import java.awt.*;
+import java.awt.event.*;
 import java.util.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
@@ -13,9 +19,45 @@ import javax.swing.border.*;
 /**
  * @author unknown
  */
+@Controller
 public class MainPage extends JFrame {
+
+
+    @Autowired
+    StudentList studentList;
+
+    private User user;
+    public void setUserMsg(User user){
+        this.user = user;
+        this.label1.setText("用户:"+this.user.getUsername()+",权限:"+this.user.getPrivilege());
+    }
+
+    public static void main(String[] args) {
+        new MainPage().setVisible(true);
+    }
+
     public MainPage() {
         initComponents();
+
+
+
+        this.setVisible(true);
+
+
+
+
+        this.setDefaultCloseOperation(EXIT_ON_CLOSE);
+    }
+
+    /**
+     * 展示
+     * @param e
+     */
+    private void menuItem3(ActionEvent e) {
+
+        studentList.setVisible(true);
+        studentList.setSize(640,640);
+        desktopPane1.add(studentList);
     }
 
     private void initComponents() {
@@ -23,7 +65,6 @@ public class MainPage extends JFrame {
         // Generated using JFormDesigner Evaluation license - unknown
         ResourceBundle bundle = ResourceBundle.getBundle("form");
         dialogPane = new JPanel();
-        contentPanel = new JPanel();
         menuBar1 = new JMenuBar();
         menu1 = new JMenu();
         menu2 = new JMenu();
@@ -37,112 +78,226 @@ public class MainPage extends JFrame {
         menu7 = new JMenu();
         menuItem7 = new JMenuItem();
         menu3 = new JMenu();
+        menu8 = new JMenu();
+        menuItem1 = new JMenuItem();
+        menu9 = new JMenu();
+        menuItem2 = new JMenuItem();
+        menu10 = new JMenu();
+        menu11 = new JMenu();
+        menuItem8 = new JMenuItem();
+        menu12 = new JMenu();
+        menuItem9 = new JMenuItem();
+        menuItem10 = new JMenuItem();
+        menu13 = new JMenu();
+        menuItem11 = new JMenuItem();
+        menuItem12 = new JMenuItem();
+        menuItem13 = new JMenuItem();
+        label1 = new JLabel();
+        panel1 = new JPanel();
+        desktopPane1 = new JDesktopPane();
 
         //======== this ========
         var contentPane = getContentPane();
-        contentPane.setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-            dialogPane.setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.
-            swing.border.EmptyBorder(0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing.border
-            .TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dialo\u0067"
-            ,java.awt.Font.BOLD,12),java.awt.Color.red),dialogPane. getBorder
-            ()));dialogPane. addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java
-            .beans.PropertyChangeEvent e){if("borde\u0072".equals(e.getPropertyName()))throw new RuntimeException
-            ();}});
-            dialogPane.setLayout(new BorderLayout());
+            dialogPane.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder (
+            0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder
+            . BOTTOM, new java. awt .Font ( "D\u0069alog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .
+            red ) ,dialogPane. getBorder () ) ); dialogPane. addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java .
+            beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
-            //======== contentPanel ========
+            //======== menuBar1 ========
             {
 
-                //======== menuBar1 ========
+                //======== menu1 ========
                 {
+                    menu1.setText(bundle.getString("menu1.text"));
 
-                    //======== menu1 ========
+                    //======== menu2 ========
                     {
-                        menu1.setText(bundle.getString("menu1.text"));
+                        menu2.setText(bundle.getString("menu2.text"));
 
-                        //======== menu2 ========
-                        {
-                            menu2.setText(bundle.getString("menu2.text"));
-
-                            //---- menuItem3 ----
-                            menuItem3.setText(bundle.getString("menuItem3.text"));
-                            menu2.add(menuItem3);
-                        }
-                        menu1.add(menu2);
-
-                        //======== menu4 ========
-                        {
-                            menu4.setText(bundle.getString("menu4.text"));
-
-                            //---- menuItem4 ----
-                            menuItem4.setText(bundle.getString("menuItem4.text"));
-                            menu4.add(menuItem4);
-                        }
-                        menu1.add(menu4);
-
-                        //======== menu5 ========
-                        {
-                            menu5.setText(bundle.getString("menu5.text"));
-
-                            //---- menuItem5 ----
-                            menuItem5.setText(bundle.getString("menuItem5.text"));
-                            menu5.add(menuItem5);
-                        }
-                        menu1.add(menu5);
-
-                        //======== menu6 ========
-                        {
-                            menu6.setText(bundle.getString("menu6.text"));
-
-                            //---- menuItem6 ----
-                            menuItem6.setText(bundle.getString("menuItem6.text"));
-                            menu6.add(menuItem6);
-                        }
-                        menu1.add(menu6);
-
-                        //======== menu7 ========
-                        {
-                            menu7.setText(bundle.getString("menu7.text"));
-
-                            //---- menuItem7 ----
-                            menuItem7.setText(bundle.getString("menuItem7.text"));
-                            menu7.add(menuItem7);
-                        }
-                        menu1.add(menu7);
+                        //---- menuItem3 ----
+                        menuItem3.setText(bundle.getString("menuItem3.text"));
+                        menuItem3.addActionListener(e -> menuItem3(e));
+                        menu2.add(menuItem3);
                     }
-                    menuBar1.add(menu1);
+                    menu1.add(menu2);
 
-                    //======== menu3 ========
+                    //======== menu4 ========
                     {
-                        menu3.setText(bundle.getString("menu3.text"));
+                        menu4.setText(bundle.getString("menu4.text"));
+
+                        //---- menuItem4 ----
+                        menuItem4.setText(bundle.getString("menuItem4.text"));
+                        menu4.add(menuItem4);
                     }
-                    menuBar1.add(menu3);
+                    menu1.add(menu4);
+
+                    //======== menu5 ========
+                    {
+                        menu5.setText(bundle.getString("menu5.text"));
+
+                        //---- menuItem5 ----
+                        menuItem5.setText(bundle.getString("menuItem5.text"));
+                        menu5.add(menuItem5);
+                    }
+                    menu1.add(menu5);
+
+                    //======== menu6 ========
+                    {
+                        menu6.setText(bundle.getString("menu6.text"));
+
+                        //---- menuItem6 ----
+                        menuItem6.setText(bundle.getString("menuItem6.text"));
+                        menu6.add(menuItem6);
+                    }
+                    menu1.add(menu6);
+
+                    //======== menu7 ========
+                    {
+                        menu7.setText(bundle.getString("menu7.text"));
+
+                        //---- menuItem7 ----
+                        menuItem7.setText(bundle.getString("menuItem7.text"));
+                        menu7.add(menuItem7);
+                    }
+                    menu1.add(menu7);
                 }
+                menuBar1.add(menu1);
 
-                GroupLayout contentPanelLayout = new GroupLayout(contentPanel);
-                contentPanel.setLayout(contentPanelLayout);
-                contentPanelLayout.setHorizontalGroup(
-                    contentPanelLayout.createParallelGroup()
-                        .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(menuBar1, GroupLayout.DEFAULT_SIZE, 902, Short.MAX_VALUE)
-                            .addContainerGap())
-                );
-                contentPanelLayout.setVerticalGroup(
-                    contentPanelLayout.createParallelGroup()
-                        .addGroup(contentPanelLayout.createSequentialGroup()
-                            .addContainerGap()
-                            .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(563, Short.MAX_VALUE))
-                );
+                //======== menu3 ========
+                {
+                    menu3.setText(bundle.getString("menu3.text"));
+
+                    //======== menu8 ========
+                    {
+                        menu8.setText(bundle.getString("menu8.text"));
+
+                        //---- menuItem1 ----
+                        menuItem1.setText(bundle.getString("menuItem1.text"));
+                        menu8.add(menuItem1);
+                    }
+                    menu3.add(menu8);
+
+                    //======== menu9 ========
+                    {
+                        menu9.setText(bundle.getString("menu9.text"));
+
+                        //---- menuItem2 ----
+                        menuItem2.setText(bundle.getString("menuItem2.text"));
+                        menu9.add(menuItem2);
+                    }
+                    menu3.add(menu9);
+                }
+                menuBar1.add(menu3);
+
+                //======== menu10 ========
+                {
+                    menu10.setText(bundle.getString("menu10.text"));
+
+                    //======== menu11 ========
+                    {
+                        menu11.setText(bundle.getString("menu11.text"));
+
+                        //---- menuItem8 ----
+                        menuItem8.setText(bundle.getString("menuItem8.text"));
+                        menu11.add(menuItem8);
+                    }
+                    menu10.add(menu11);
+
+                    //======== menu12 ========
+                    {
+                        menu12.setText(bundle.getString("menu12.text"));
+
+                        //---- menuItem9 ----
+                        menuItem9.setText(bundle.getString("menuItem9.text"));
+                        menu12.add(menuItem9);
+
+                        //---- menuItem10 ----
+                        menuItem10.setText(bundle.getString("menuItem10.text"));
+                        menu12.add(menuItem10);
+                    }
+                    menu10.add(menu12);
+                }
+                menuBar1.add(menu10);
+
+                //======== menu13 ========
+                {
+                    menu13.setText(bundle.getString("menu13.text"));
+
+                    //---- menuItem11 ----
+                    menuItem11.setText(bundle.getString("menuItem11.text"));
+                    menu13.add(menuItem11);
+
+                    //---- menuItem12 ----
+                    menuItem12.setText(bundle.getString("menuItem12.text"));
+                    menu13.add(menuItem12);
+
+                    //---- menuItem13 ----
+                    menuItem13.setText(bundle.getString("menuItem13.text"));
+                    menu13.add(menuItem13);
+                }
+                menuBar1.add(menu13);
             }
-            dialogPane.add(contentPanel, BorderLayout.NORTH);
+
+            GroupLayout dialogPaneLayout = new GroupLayout(dialogPane);
+            dialogPane.setLayout(dialogPaneLayout);
+            dialogPaneLayout.setHorizontalGroup(
+                dialogPaneLayout.createParallelGroup()
+                    .addGroup(dialogPaneLayout.createSequentialGroup()
+                        .addComponent(menuBar1, GroupLayout.PREFERRED_SIZE, 690, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(label1, GroupLayout.PREFERRED_SIZE, 216, GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
+            dialogPaneLayout.setVerticalGroup(
+                dialogPaneLayout.createParallelGroup()
+                    .addGroup(dialogPaneLayout.createSequentialGroup()
+                        .addGroup(dialogPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                            .addComponent(menuBar1, GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE)
+                            .addComponent(label1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            );
         }
-        contentPane.add(dialogPane, BorderLayout.CENTER);
+
+        //======== panel1 ========
+        {
+
+            GroupLayout panel1Layout = new GroupLayout(panel1);
+            panel1.setLayout(panel1Layout);
+            panel1Layout.setHorizontalGroup(
+                panel1Layout.createParallelGroup()
+                    .addComponent(desktopPane1, GroupLayout.DEFAULT_SIZE, 926, Short.MAX_VALUE)
+            );
+            panel1Layout.setVerticalGroup(
+                panel1Layout.createParallelGroup()
+                    .addComponent(desktopPane1, GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+            );
+        }
+
+        GroupLayout contentPaneLayout = new GroupLayout(contentPane);
+        contentPane.setLayout(contentPaneLayout);
+        contentPaneLayout.setHorizontalGroup(
+            contentPaneLayout.createParallelGroup()
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addGroup(contentPaneLayout.createParallelGroup()
+                        .addComponent(dialogPane, GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(panel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addContainerGap())
+        );
+        contentPaneLayout.setVerticalGroup(
+            contentPaneLayout.createParallelGroup()
+                .addGroup(contentPaneLayout.createSequentialGroup()
+                    .addComponent(dialogPane, GroupLayout.PREFERRED_SIZE, 44, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(panel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
+        );
         pack();
         setLocationRelativeTo(getOwner());
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
@@ -151,7 +306,6 @@ public class MainPage extends JFrame {
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables
     // Generated using JFormDesigner Evaluation license - unknown
     private JPanel dialogPane;
-    private JPanel contentPanel;
     private JMenuBar menuBar1;
     private JMenu menu1;
     private JMenu menu2;
@@ -165,5 +319,22 @@ public class MainPage extends JFrame {
     private JMenu menu7;
     private JMenuItem menuItem7;
     private JMenu menu3;
+    private JMenu menu8;
+    private JMenuItem menuItem1;
+    private JMenu menu9;
+    private JMenuItem menuItem2;
+    private JMenu menu10;
+    private JMenu menu11;
+    private JMenuItem menuItem8;
+    private JMenu menu12;
+    private JMenuItem menuItem9;
+    private JMenuItem menuItem10;
+    private JMenu menu13;
+    private JMenuItem menuItem11;
+    private JMenuItem menuItem12;
+    private JMenuItem menuItem13;
+    private JLabel label1;
+    private JPanel panel1;
+    private JDesktopPane desktopPane1;
     // JFormDesigner - End of variables declaration  //GEN-END:variables
 }

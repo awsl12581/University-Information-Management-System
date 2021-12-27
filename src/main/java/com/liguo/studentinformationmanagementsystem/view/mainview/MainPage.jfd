@@ -5,75 +5,140 @@ new FormModel {
 	"i18n.bundleName": "form"
 	contentType: "form/swing"
 	root: new FormRoot {
-		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {comp dialogPane::l::932:x, seq l {space :::p, comp panel1:::::x}}, space :::p}}"
+			"$verticalGroup": "par l {seq l {comp dialogPane:::p:44:p, space :::p, comp panel1:::::x, space :::p}}"
+		} ) {
 			name: "this"
-			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {comp menuBar1:::p:690:p, space u:::p, comp label1:::p:216:p, space :::x}}"
+				"$verticalGroup": "par l {seq {par l:::p {comp menuBar1::::33:x, comp label1:::::x}, space :::x}}"
+			} ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
-				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq l {space :::p, comp menuBar1::::902:x, space :::p}}"
-					"$verticalGroup": "par l {seq l {space :::p, comp menuBar1:::p:40:p, space ::563:x}}"
-				} ) {
-					name: "contentPanel"
-					add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
-						name: "menuBar1"
+				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
+					name: "menuBar1"
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "menu1"
+						"text": new FormMessage( null, "menu1.text" )
 						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu1"
-							"text": new FormMessage( null, "menu1.text" )
-							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-								name: "menu2"
-								"text": new FormMessage( null, "menu2.text" )
-								add( new FormComponent( "javax.swing.JMenuItem" ) {
-									name: "menuItem3"
-									"text": new FormMessage( null, "menuItem3.text" )
-								} )
-							} )
-							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-								name: "menu4"
-								"text": new FormMessage( null, "menu4.text" )
-								add( new FormComponent( "javax.swing.JMenuItem" ) {
-									name: "menuItem4"
-									"text": new FormMessage( null, "menuItem4.text" )
-								} )
-							} )
-							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-								name: "menu5"
-								"text": new FormMessage( null, "menu5.text" )
-								add( new FormComponent( "javax.swing.JMenuItem" ) {
-									name: "menuItem5"
-									"text": new FormMessage( null, "menuItem5.text" )
-								} )
-							} )
-							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-								name: "menu6"
-								"text": new FormMessage( null, "menu6.text" )
-								add( new FormComponent( "javax.swing.JMenuItem" ) {
-									name: "menuItem6"
-									"text": new FormMessage( null, "menuItem6.text" )
-								} )
-							} )
-							add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-								name: "menu7"
-								"text": new FormMessage( null, "menu7.text" )
-								add( new FormComponent( "javax.swing.JMenuItem" ) {
-									name: "menuItem7"
-									"text": new FormMessage( null, "menuItem7.text" )
-								} )
+							name: "menu2"
+							"text": new FormMessage( null, "menu2.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem3"
+								"text": new FormMessage( null, "menuItem3.text" )
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem3", true ) )
 							} )
 						} )
 						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu3"
-							"text": new FormMessage( null, "menu3.text" )
+							name: "menu4"
+							"text": new FormMessage( null, "menu4.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem4"
+								"text": new FormMessage( null, "menuItem4.text" )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu5"
+							"text": new FormMessage( null, "menu5.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem5"
+								"text": new FormMessage( null, "menuItem5.text" )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu6"
+							"text": new FormMessage( null, "menu6.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem6"
+								"text": new FormMessage( null, "menuItem6.text" )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu7"
+							"text": new FormMessage( null, "menu7.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem7"
+								"text": new FormMessage( null, "menuItem7.text" )
+							} )
 						} )
 					} )
-				}, new FormLayoutConstraints( class java.lang.String ) {
-					"value": "North"
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "menu3"
+						"text": new FormMessage( null, "menu3.text" )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu8"
+							"text": new FormMessage( null, "menu8.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem1"
+								"text": new FormMessage( null, "menuItem1.text" )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu9"
+							"text": new FormMessage( null, "menu9.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem2"
+								"text": new FormMessage( null, "menuItem2.text" )
+							} )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "menu10"
+						"text": new FormMessage( null, "menu10.text" )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu11"
+							"text": new FormMessage( null, "menu11.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem8"
+								"text": new FormMessage( null, "menuItem8.text" )
+							} )
+						} )
+						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+							name: "menu12"
+							"text": new FormMessage( null, "menu12.text" )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem9"
+								"text": new FormMessage( null, "menuItem9.text" )
+							} )
+							add( new FormComponent( "javax.swing.JMenuItem" ) {
+								name: "menuItem10"
+								"text": new FormMessage( null, "menuItem10.text" )
+							} )
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
+						name: "menu13"
+						"text": new FormMessage( null, "menu13.text" )
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItem11"
+							"text": new FormMessage( null, "menuItem11.text" )
+						} )
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItem12"
+							"text": new FormMessage( null, "menuItem12.text" )
+						} )
+						add( new FormComponent( "javax.swing.JMenuItem" ) {
+							name: "menuItem13"
+							"text": new FormMessage( null, "menuItem13.text" )
+						} )
+					} )
 				} )
-			}, new FormLayoutConstraints( class java.lang.String ) {
-				"value": "Center"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {comp desktopPane1::l::926:x}"
+				"$verticalGroup": "par l {comp desktopPane1::l::577:x}"
+			} ) {
+				name: "panel1"
+				add( new FormContainer( "javax.swing.JDesktopPane", new FormLayoutManager( class javax.swing.JDesktopPane ) ) {
+					name: "desktopPane1"
+				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 0, 0 )
+			"location": new java.awt.Point( 5, 0 )
 			"size": new java.awt.Dimension( 940, 665 )
 		} )
 	}

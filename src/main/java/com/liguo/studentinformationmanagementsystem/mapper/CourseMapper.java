@@ -2,8 +2,10 @@ package com.liguo.studentinformationmanagementsystem.mapper;
 
 import com.liguo.studentinformationmanagementsystem.entity.Course;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.stereotype.Repository;
 
-@Mapper
+//@Mapper
+@Repository
 public interface CourseMapper {
     int deleteByPrimaryKey(Integer id);
 

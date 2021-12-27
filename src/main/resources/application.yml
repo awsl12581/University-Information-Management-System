@@ -8,9 +8,9 @@ spring:
     #基础配置
     driver-class-name: com.mysql.cj.jdbc.Driver
     type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://localhost:3306/mydb?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    username: awsl
-    password: 123456
+    url: jdbc:mysql://localhost:3306/information?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: root
+    password: awsl12138
     #druid配置
     druid:
       initialSize: 5
@@ -33,10 +33,10 @@ spring:
 #mybatis设置
 mybatis:
   mapper-locations: classpath:mapping/*Mapper.xml
-  type-aliases-package: com.liguo.studentinformationmanagementsystem.pojo
+  type-aliases-package: com.liguo.studentinformationmanagementsystem.entity
   configuration:
-    #log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+#    log-impl: org.apache.ibatis.logging.slf4j.Slf4jImpl
     map-underscore-to-camel-case: true
     cache-enabled: true
 

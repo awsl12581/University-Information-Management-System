@@ -1,145 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.liguo.studentinformationmanagementsystem.mapper.StudentMapper">
-  <resultMap id="BaseResultMap" type="com.liguo.studentinformationmanagementsystem.entity.Student">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="student_name" jdbcType="VARCHAR" property="studentName" />
-    <result column="student_id" jdbcType="VARCHAR" property="studentId" />
-    <result column="sex" jdbcType="VARCHAR" property="sex" />
-    <result column="student_qq" jdbcType="VARCHAR" property="studentQq" />
-    <result column="student_class" jdbcType="VARCHAR" property="studentClass" />
-    <result column="student_tel" jdbcType="VARCHAR" property="studentTel" />
-  </resultMap>
-  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="com.liguo.studentinformationmanagementsystem.entity.Student">
-    <result column="photo" jdbcType="LONGVARBINARY" property="photo" />
-  </resultMap>
-  <sql id="Base_Column_List">
-    <if test="true"> id, student_name, student_id, sex, student_qq, student_class, student_tel</if>
-  </sql>
-  <sql id="Blob_Column_List">
-    <if test="true">photo</if>
-  </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
-    select 
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from student
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from student
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <insert id="insert" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
-    insert into student (id, student_name, student_id, 
-      sex, student_qq, student_class, 
-      student_tel, photo)
-    values (#{id,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR}, 
-      #{sex,jdbcType=VARCHAR}, #{studentQq,jdbcType=VARCHAR}, #{studentClass,jdbcType=VARCHAR}, 
-      #{studentTel,jdbcType=VARCHAR}, #{photo,jdbcType=LONGVARBINARY})
-  </insert>
-  <insert id="insertSelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
-    insert into student
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="studentName != null">
-        student_name,
-      </if>
-      <if test="studentId != null">
-        student_id,
-      </if>
-      <if test="sex != null">
-        sex,
-      </if>
-      <if test="studentQq != null">
-        student_qq,
-      </if>
-      <if test="studentClass != null">
-        student_class,
-      </if>
-      <if test="studentTel != null">
-        student_tel,
-      </if>
-      <if test="photo != null">
-        photo,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="studentName != null">
-        #{studentName,jdbcType=VARCHAR},
-      </if>
-      <if test="studentId != null">
-        #{studentId,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        #{sex,jdbcType=VARCHAR},
-      </if>
-      <if test="studentQq != null">
-        #{studentQq,jdbcType=VARCHAR},
-      </if>
-      <if test="studentClass != null">
-        #{studentClass,jdbcType=VARCHAR},
-      </if>
-      <if test="studentTel != null">
-        #{studentTel,jdbcType=VARCHAR},
-      </if>
-      <if test="photo != null">
-        #{photo,jdbcType=LONGVARBINARY},
-      </if>
-    </trim>
-  </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
-    update student
-    <set>
-      <if test="studentName != null">
-        student_name = #{studentName,jdbcType=VARCHAR},
-      </if>
-      <if test="studentId != null">
-        student_id = #{studentId,jdbcType=VARCHAR},
-      </if>
-      <if test="sex != null">
-        sex = #{sex,jdbcType=VARCHAR},
-      </if>
-      <if test="studentQq != null">
-        student_qq = #{studentQq,jdbcType=VARCHAR},
-      </if>
-      <if test="studentClass != null">
-        student_class = #{studentClass,jdbcType=VARCHAR},
-      </if>
-      <if test="studentTel != null">
-        student_tel = #{studentTel,jdbcType=VARCHAR},
-      </if>
-      <if test="photo != null">
-        photo = #{photo,jdbcType=LONGVARBINARY},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
-    update student
-    set student_name = #{studentName,jdbcType=VARCHAR},
-      student_id = #{studentId,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=VARCHAR},
-      student_qq = #{studentQq,jdbcType=VARCHAR},
-      student_class = #{studentClass,jdbcType=VARCHAR},
-      student_tel = #{studentTel,jdbcType=VARCHAR},
-      photo = #{photo,jdbcType=LONGVARBINARY}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
-    update student
-    set student_name = #{studentName,jdbcType=VARCHAR},
-      student_id = #{studentId,jdbcType=VARCHAR},
-      sex = #{sex,jdbcType=VARCHAR},
-      student_qq = #{studentQq,jdbcType=VARCHAR},
-      student_class = #{studentClass,jdbcType=VARCHAR},
-      student_tel = #{studentTel,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
+    <resultMap id="BaseResultMap" type="com.liguo.studentinformationmanagementsystem.entity.Student">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="student_name" jdbcType="VARCHAR" property="studentName"/>
+        <result column="student_id" jdbcType="VARCHAR" property="studentId"/>
+        <result column="sex" jdbcType="VARCHAR" property="sex"/>
+        <result column="student_qq" jdbcType="VARCHAR" property="studentQq"/>
+        <result column="student_class" jdbcType="VARCHAR" property="studentClass"/>
+        <result column="student_tel" jdbcType="VARCHAR" property="studentTel"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        <if test="true">id, student_name, student_id, sex, student_qq, student_class, student_tel</if>
+    </sql>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+
+        from student
+        where id = #{id,jdbcType=INTEGER}
+    </select>
+    <select id="selectByStudent" resultType="com.liguo.studentinformationmanagementsystem.entity.Student">
+        select
+        *
+        from student
+        <where>
+            <if test="classId!=null and classId!=''">OR student_class=#{classId}</if>
+            <if test="studentId!=null and studentId!=''">OR student_id=#{studentId}</if>
+        </where>
+
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+        delete
+        from student
+        where id = #{id,jdbcType=INTEGER}
+    </delete>
+    <insert id="insert" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
+        insert into student (id, student_name, student_id,
+                             sex, student_qq, student_class,
+                             student_tel, photo)
+        values (#{id,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR},
+                #{sex,jdbcType=VARCHAR}, #{studentQq,jdbcType=VARCHAR}, #{studentClass,jdbcType=VARCHAR},
+                #{studentTel,jdbcType=VARCHAR}, #{photo,jdbcType=LONGVARBINARY})
+    </insert>
+    <insert id="insertSelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
+        insert into student
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="studentName != null">
+                student_name,
+            </if>
+            <if test="studentId != null">
+                student_id,
+            </if>
+            <if test="sex != null">
+                sex,
+            </if>
+            <if test="studentQq != null">
+                student_qq,
+            </if>
+            <if test="studentClass != null">
+                student_class,
+            </if>
+            <if test="studentTel != null">
+                student_tel,
+            </if>
+            <if test="photo != null">
+                photo,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="studentName != null">
+                #{studentName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentId != null">
+                #{studentId,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="studentQq != null">
+                #{studentQq,jdbcType=VARCHAR},
+            </if>
+            <if test="studentClass != null">
+                #{studentClass,jdbcType=VARCHAR},
+            </if>
+            <if test="studentTel != null">
+                #{studentTel,jdbcType=VARCHAR},
+            </if>
+            <if test="photo != null">
+                #{photo,jdbcType=LONGVARBINARY},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective"
+            parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
+        update student
+        <set>
+            <if test="studentName != null">
+                student_name = #{studentName,jdbcType=VARCHAR},
+            </if>
+            <if test="studentId != null">
+                student_id = #{studentId,jdbcType=VARCHAR},
+            </if>
+            <if test="sex != null">
+                sex = #{sex,jdbcType=VARCHAR},
+            </if>
+            <if test="studentQq != null">
+                student_qq = #{studentQq,jdbcType=VARCHAR},
+            </if>
+            <if test="studentClass != null">
+                student_class = #{studentClass,jdbcType=VARCHAR},
+            </if>
+            <if test="studentTel != null">
+                student_tel = #{studentTel,jdbcType=VARCHAR},
+            </if>
+            <if test="photo != null">
+                photo = #{photo,jdbcType=LONGVARBINARY},
+            </if>
+        </set>
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKeyWithBLOBs"
+            parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
+        update student
+        set student_name  = #{studentName,jdbcType=VARCHAR},
+            student_id    = #{studentId,jdbcType=VARCHAR},
+            sex           = #{sex,jdbcType=VARCHAR},
+            student_qq    = #{studentQq,jdbcType=VARCHAR},
+            student_class = #{studentClass,jdbcType=VARCHAR},
+            student_tel   = #{studentTel,jdbcType=VARCHAR},
+            photo         = #{photo,jdbcType=LONGVARBINARY}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
+        update student
+        set student_name  = #{studentName,jdbcType=VARCHAR},
+            student_id    = #{studentId,jdbcType=VARCHAR},
+            sex           = #{sex,jdbcType=VARCHAR},
+            student_qq    = #{studentQq,jdbcType=VARCHAR},
+            student_class = #{studentClass,jdbcType=VARCHAR},
+            student_tel   = #{studentTel,jdbcType=VARCHAR}
+        where id = #{id,jdbcType=INTEGER}
+    </update>
 </mapper>

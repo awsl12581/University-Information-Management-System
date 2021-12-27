@@ -4,9 +4,11 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
+import java.util.ArrayList;
+
 @ApiModel(value="com.liguo.studentinformationmanagementsystem.entity.Student")
 @Data
-public class Student {
+public class Student{
     /**
      */
     @ApiModelProperty(value="")
@@ -42,8 +44,4 @@ public class Student {
     @ApiModelProperty(value="")
     private String studentTel;
 
-    /**
-     */
-    @ApiModelProperty(value="")
-    private byte[] photo;
 }

@@ -8,17 +8,21 @@ import lombok.Data;
 @Data
 public class Course {
     /**
+     * 主键id
      */
-    @ApiModelProperty(value="")
+    @ApiModelProperty(value="主键")
     private Integer id;
 
     /**
+     *
+     * 课程id
      */
-    @ApiModelProperty(value="")
+    @ApiModelProperty(value="课程id号")
     private String courseId;
 
     /**
+     * 课程名
      */
-    @ApiModelProperty(value="")
+    @ApiModelProperty(value="课程名")
     private String courseName;
 }
