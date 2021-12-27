@@ -10,7 +10,7 @@
     <result column="faculty" jdbcType="VARCHAR" property="faculty" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, teacher_id, teacher_name, sex, teacher_tel, faculty
+    <if test="true">id, teacher_id, teacher_name, sex, teacher_tel, faculty</if>
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

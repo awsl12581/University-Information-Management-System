@@ -8,7 +8,7 @@
     <result column="privilege" jdbcType="VARCHAR" property="privilege" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, username, password, privilege
+    <if test="true">id, username, password, privilege</if>
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 

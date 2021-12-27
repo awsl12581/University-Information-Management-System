@@ -14,10 +14,10 @@
     <result column="photo" jdbcType="LONGVARBINARY" property="photo" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, student_name, student_id, sex, student_qq, student_class, student_tel
+    <if test="true"> id, student_name, student_id, sex, student_qq, student_class, student_tel</if>
   </sql>
   <sql id="Blob_Column_List">
-    photo
+    <if test="true">photo</if>
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 

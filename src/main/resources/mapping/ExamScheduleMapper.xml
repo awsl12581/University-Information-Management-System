@@ -11,7 +11,7 @@
     <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, teacher_id, course_id, course_name, teacher_name, start_time, remark
+    <if test="true">id, teacher_id, course_id, course_name, teacher_name, start_time, remark</if>
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
