@@ -1,0 +1,132 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.12" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundleName": "form"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JInternalFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {space :::p, par l {comp panel1:::::x, comp scrollPane1::::738:x, comp panel2::l:::x}, space :::p}}"
+			"$verticalGroup": "par l {seq l {space :::p, comp panel1:::p::p, space :::p, comp scrollPane1:::p:233:p, space :::p, comp panel2:::::x, space :::p}}"
+		} ) {
+			name: "this"
+			"visible": true
+			"closable": true
+			"iconifiable": true
+			"maximizable": true
+			"title": new FormMessage( null, "this.title_3" )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:20:p, comp label1:::p::p, space s:::p, comp comboBox1:::p:116:p, space u:::p, comp textField1:::p:171:p, space s:::p, comp button1:::p::p, space :p:32:p, comp button3:::p::p, space ::171:x}}"
+				"$verticalGroup": "par l {seq {space :::p, par b {comp label1::b:p::p, comp comboBox1::b:p::p, comp textField1::b:p::p, comp button1::b:p::p, comp button3::b:p::p}, space ::11:x}}"
+			} ) {
+				name: "panel1"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+					"text": new FormMessage( null, "label1.text_4" )
+				} )
+				add( new FormComponent( "javax.swing.JComboBox" ) {
+					name: "comboBox1"
+					"model": new javax.swing.DefaultComboBoxModel {
+						selectedItem: "all"
+						addElement( "all" )
+						addElement( "teacherId" )
+						addElement( "teacherName" )
+						addElement( "faculty" )
+					}
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField1"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": new FormMessage( null, "button1.text_3" )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"text": new FormMessage( null, "button3.text_2" )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+				name: "scrollPane1"
+				add( new FormComponent( "javax.swing.JTable" ) {
+					name: "table1"
+					"model": new com.jformdesigner.model.SwingTableModel( new java.util.Vector, new java.util.Vector {
+						add( "职工号" )
+						add( "姓名" )
+						add( "性别" )
+						add( "电话" )
+						add( "学院" )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					}, new java.util.Vector {
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+						add( null )
+					} )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:36:p, par l {comp label2::l:p::p, comp label3::l:p::p, comp label4::l:p::p}, space s:::p, par l:::p {comp textField2::::163:x, comp textField3::::163:x, comp textField4::::163:x}, space s:::p, par l {par l:::p {seq {comp label5:::p::p, space s:::p, comp textField5:::p:146:p}, seq {comp label6:::p::p, space s:::p, comp textField6:::::x}}, comp button2:::p::p}, space ::279:x}}"
+				"$verticalGroup": "par l {seq l {space :p:21:p, par b {comp label2::b:p::p, comp textField2::b:p::p, comp label5::b:p::p, comp textField5::b:p::p}, space u:::p, par b {comp label3::b:p::p, comp textField3::b:p::p, comp label6::b:p::p, comp textField6::b:p::p}, space s:::p, par b {comp label4::b:p::p, comp textField4::b:p::p, comp button2::b:p::p}, space ::38:x}}"
+			} ) {
+				name: "panel2"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label2"
+					"text": new FormMessage( null, "label2.text_4" )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField2"
+					"enabled": false
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": new FormMessage( null, "label3.text_4" )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField3"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": new FormMessage( null, "label4.text_2" )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField4"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": new FormMessage( null, "label5.text_2" )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField5"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label6"
+					"text": new FormMessage( null, "label6.text_2" )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "textField6"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": new FormMessage( null, "button2.text_3" )
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 750, 505 )
+		} )
+	}
+}

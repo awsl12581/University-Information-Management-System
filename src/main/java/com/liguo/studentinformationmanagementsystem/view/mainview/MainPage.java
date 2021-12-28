@@ -5,7 +5,9 @@
 package com.liguo.studentinformationmanagementsystem.view.mainview;
 
 import com.liguo.studentinformationmanagementsystem.entity.User;
+import com.liguo.studentinformationmanagementsystem.view.component.MessagePage;
 import com.liguo.studentinformationmanagementsystem.view.component.StudentList;
+import com.liguo.studentinformationmanagementsystem.view.component.TeacherList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -25,6 +27,8 @@ public class MainPage extends JFrame {
 
     @Autowired
     StudentList studentList;
+    @Autowired
+    TeacherList teacherList;
 
     private User user;
     public void setUserMsg(User user){
@@ -38,14 +42,6 @@ public class MainPage extends JFrame {
 
     public MainPage() {
         initComponents();
-
-
-
-        this.setVisible(true);
-
-
-
-
         this.setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 
@@ -56,8 +52,27 @@ public class MainPage extends JFrame {
     private void menuItem3(ActionEvent e) {
 
         studentList.setVisible(true);
+        studentList.setUser(user);
         studentList.setSize(640,640);
+        studentList.setResizable(true);
         desktopPane1.add(studentList);
+    }
+
+    private void menuItem11(ActionEvent e) {
+        MessagePage messagePage = new MessagePage();
+        messagePage.setVisible(true);
+        messagePage.setMessage(user);
+        messagePage.setSize(640,640);
+        messagePage.setResizable(true);
+        desktopPane1.add(messagePage);
+    }
+
+    private void menuItem4(ActionEvent e) {
+        teacherList.setVisible(true);
+        teacherList.setUser(user);
+        teacherList.setSize(640,640);
+        teacherList.setResizable(true);
+        desktopPane1.add(teacherList);
     }
 
     private void initComponents() {
@@ -75,8 +90,6 @@ public class MainPage extends JFrame {
         menuItem5 = new JMenuItem();
         menu6 = new JMenu();
         menuItem6 = new JMenuItem();
-        menu7 = new JMenu();
-        menuItem7 = new JMenuItem();
         menu3 = new JMenu();
         menu8 = new JMenu();
         menuItem1 = new JMenuItem();
@@ -86,7 +99,6 @@ public class MainPage extends JFrame {
         menu11 = new JMenu();
         menuItem8 = new JMenuItem();
         menu12 = new JMenu();
-        menuItem9 = new JMenuItem();
         menuItem10 = new JMenuItem();
         menu13 = new JMenu();
         menuItem11 = new JMenuItem();
@@ -102,11 +114,12 @@ public class MainPage extends JFrame {
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-            dialogPane.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder (
-            0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder
-            . BOTTOM, new java. awt .Font ( "D\u0069alog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .
-            red ) ,dialogPane. getBorder () ) ); dialogPane. addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java .
-            beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
+            dialogPane.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing.
+            border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder. CENTER
+            ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font
+            . BOLD ,12 ) ,java . awt. Color .red ) ,dialogPane. getBorder () ) ); dialogPane. addPropertyChangeListener(
+            new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r"
+            .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
 
             //======== menuBar1 ========
             {
@@ -132,6 +145,7 @@ public class MainPage extends JFrame {
 
                         //---- menuItem4 ----
                         menuItem4.setText(bundle.getString("menuItem4.text"));
+                        menuItem4.addActionListener(e -> menuItem4(e));
                         menu4.add(menuItem4);
                     }
                     menu1.add(menu4);
@@ -155,16 +169,6 @@ public class MainPage extends JFrame {
                         menu6.add(menuItem6);
                     }
                     menu1.add(menu6);
-
-                    //======== menu7 ========
-                    {
-                        menu7.setText(bundle.getString("menu7.text"));
-
-                        //---- menuItem7 ----
-                        menuItem7.setText(bundle.getString("menuItem7.text"));
-                        menu7.add(menuItem7);
-                    }
-                    menu1.add(menu7);
                 }
                 menuBar1.add(menu1);
 
@@ -212,10 +216,6 @@ public class MainPage extends JFrame {
                     {
                         menu12.setText(bundle.getString("menu12.text"));
 
-                        //---- menuItem9 ----
-                        menuItem9.setText(bundle.getString("menuItem9.text"));
-                        menu12.add(menuItem9);
-
                         //---- menuItem10 ----
                         menuItem10.setText(bundle.getString("menuItem10.text"));
                         menu12.add(menuItem10);
@@ -230,6 +230,7 @@ public class MainPage extends JFrame {
 
                     //---- menuItem11 ----
                     menuItem11.setText(bundle.getString("menuItem11.text"));
+                    menuItem11.addActionListener(e -> menuItem11(e));
                     menu13.add(menuItem11);
 
                     //---- menuItem12 ----
@@ -316,8 +317,6 @@ public class MainPage extends JFrame {
     private JMenuItem menuItem5;
     private JMenu menu6;
     private JMenuItem menuItem6;
-    private JMenu menu7;
-    private JMenuItem menuItem7;
     private JMenu menu3;
     private JMenu menu8;
     private JMenuItem menuItem1;
@@ -327,7 +326,6 @@ public class MainPage extends JFrame {
     private JMenu menu11;
     private JMenuItem menuItem8;
     private JMenu menu12;
-    private JMenuItem menuItem9;
     private JMenuItem menuItem10;
     private JMenu menu13;
     private JMenuItem menuItem11;

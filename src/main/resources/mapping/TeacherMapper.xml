@@ -9,27 +9,42 @@
     <result column="teacher_tel" jdbcType="VARCHAR" property="teacherTel" />
     <result column="faculty" jdbcType="VARCHAR" property="faculty" />
   </resultMap>
+
   <sql id="Base_Column_List">
     <if test="true">id, teacher_id, teacher_name, sex, teacher_tel, faculty</if>
   </sql>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
     select 
     <include refid="Base_Column_List" />
     from teacher
-    where id = #{id,jdbcType=INTEGER}
+    where teacher_id = #{teacherId}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <select id="selectByTeacher" resultType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
+    select
+    <include refid="Base_Column_List" />
+    from teacher
+    <where>
+      <if test="teacherId!=null and teacherId!=''">OR teacher_id=#{teacherId}</if>
+      <if test="teacherName!=null and teacherName!=''">OR teacher_name=#{teacherName}</if>
+      <if test="faculty!=null and faculty!=''">OR faculty=#{faculty}</if>
+    </where>
+  </select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
     delete from teacher
-    where id = #{id,jdbcType=INTEGER}
+    where teacher_id = #{teacherId}
   </delete>
+
   <insert id="insert" parameterType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
-    insert into teacher (id, teacher_id, teacher_name, 
+    insert into teacher (teacher_id, teacher_name,
       sex, teacher_tel, faculty
       )
-    values (#{id,jdbcType=INTEGER}, #{teacherId,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR}, 
+    values (#{teacherId,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR},
       #{sex,jdbcType=VARCHAR}, #{teacherTel,jdbcType=VARCHAR}, #{faculty,jdbcType=VARCHAR}
       )
   </insert>
+
   <insert id="insertSelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
     insert into teacher
     <trim prefix="(" suffix=")" suffixOverrides=",">
@@ -73,6 +88,7 @@
       </if>
     </trim>
   </insert>
+
   <update id="updateByPrimaryKeySelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
     update teacher
     <set>
@@ -92,8 +108,9 @@
         faculty = #{faculty,jdbcType=VARCHAR},
       </if>
     </set>
-    where id = #{id,jdbcType=INTEGER}
+    where teacher_id = #{teacherId,jdbcType=VARCHAR}
   </update>
+
   <update id="updateByPrimaryKey" parameterType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
     update teacher
     set teacher_id = #{teacherId,jdbcType=VARCHAR},
@@ -101,6 +118,7 @@
       sex = #{sex,jdbcType=VARCHAR},
       teacher_tel = #{teacherTel,jdbcType=VARCHAR},
       faculty = #{faculty,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
+    where teacher_id = #{teacherId,jdbcType=VARCHAR}
   </update>
+
 </mapper>

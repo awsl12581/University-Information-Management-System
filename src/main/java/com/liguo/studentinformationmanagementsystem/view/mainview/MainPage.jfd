@@ -36,6 +36,7 @@ new FormModel {
 							add( new FormComponent( "javax.swing.JMenuItem" ) {
 								name: "menuItem4"
 								"text": new FormMessage( null, "menuItem4.text" )
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem4", true ) )
 							} )
 						} )
 						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
@@ -52,14 +53,6 @@ new FormModel {
 							add( new FormComponent( "javax.swing.JMenuItem" ) {
 								name: "menuItem6"
 								"text": new FormMessage( null, "menuItem6.text" )
-							} )
-						} )
-						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu7"
-							"text": new FormMessage( null, "menu7.text" )
-							add( new FormComponent( "javax.swing.JMenuItem" ) {
-								name: "menuItem7"
-								"text": new FormMessage( null, "menuItem7.text" )
 							} )
 						} )
 					} )
@@ -98,10 +91,6 @@ new FormModel {
 							name: "menu12"
 							"text": new FormMessage( null, "menu12.text" )
 							add( new FormComponent( "javax.swing.JMenuItem" ) {
-								name: "menuItem9"
-								"text": new FormMessage( null, "menuItem9.text" )
-							} )
-							add( new FormComponent( "javax.swing.JMenuItem" ) {
 								name: "menuItem10"
 								"text": new FormMessage( null, "menuItem10.text" )
 							} )
@@ -113,6 +102,7 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JMenuItem" ) {
 							name: "menuItem11"
 							"text": new FormMessage( null, "menuItem11.text" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem11", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JMenuItem" ) {
 							name: "menuItem12"

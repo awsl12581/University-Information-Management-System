@@ -1,0 +1,47 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.12" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundleName": "form"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JInternalFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :p:65:p, par l:::p {seq {comp label1:::p::p, space s:::p, comp textField1:::p:199:p}, seq l {comp label2:::p::p, space s:::p, comp textField2:::::x}, seq l {comp label3:::p::p, space s:::p, comp textField3:::::x}}, space ::64:x}}"
+			"$verticalGroup": "par l {seq l {space :p:43:p, par b {comp label1::b:p::p, comp textField1::b:p::p}, space :p:23:p, par b {comp label2::b:p::p, comp textField2::b:p::p}, space :p:25:p, par b {comp label3::b:p::p, comp textField3::b:p::p}, space ::39:x}}"
+		} ) {
+			name: "this"
+			"visible": true
+			"iconifiable": true
+			"maximizable": true
+			"closable": true
+			"title": new FormMessage( null, "this.title_2" )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": new FormMessage( null, "label1.text_3" )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": new FormMessage( null, "label2.text_2" )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": new FormMessage( null, "label3.text_2" )
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField1"
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField2"
+				"editable": false
+			} )
+			add( new FormComponent( "javax.swing.JTextField" ) {
+				name: "textField3"
+				"editable": false
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 370, 240 )
+		} )
+	}
+}

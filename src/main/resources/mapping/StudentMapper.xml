@@ -15,7 +15,8 @@
         <if test="true">id, student_name, student_id, sex, student_qq, student_class, student_tel</if>
     </sql>
 
-    <select id="selectByPrimaryKey" parameterType="java.lang.Integer">
+    <select id="selectByPrimaryKey" parameterType="java.lang.Integer"
+            resultType="com.liguo.studentinformationmanagementsystem.entity.Student">
         select
         <include refid="Base_Column_List"/>
 
@@ -37,13 +38,21 @@
         from student
         where id = #{id,jdbcType=INTEGER}
     </delete>
-    <insert id="insert" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
-        insert into student (id, student_name, student_id,
-                             sex, student_qq, student_class,
-                             student_tel, photo)
-        values (#{id,jdbcType=INTEGER}, #{studentName,jdbcType=VARCHAR}, #{studentId,jdbcType=VARCHAR},
-                #{sex,jdbcType=VARCHAR}, #{studentQq,jdbcType=VARCHAR}, #{studentClass,jdbcType=VARCHAR},
-                #{studentTel,jdbcType=VARCHAR}, #{photo,jdbcType=LONGVARBINARY})
+    <insert id="insert" parameterType="java.util.List">
+        insert into student (student_name, student_id,
+        sex, student_qq, student_class,
+        student_tel)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (
+            #{item.studentName},
+            #{item.studentId},
+            #{item.sex},
+            #{item.studentQq},
+            #{item.studentClass},
+            #{item.studentTel}
+            )
+        </foreach>
     </insert>
     <insert id="insertSelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
         insert into student
@@ -128,26 +137,14 @@
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>
-    <update id="updateByPrimaryKeyWithBLOBs"
-            parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
-        update student
-        set student_name  = #{studentName,jdbcType=VARCHAR},
-            student_id    = #{studentId,jdbcType=VARCHAR},
-            sex           = #{sex,jdbcType=VARCHAR},
-            student_qq    = #{studentQq,jdbcType=VARCHAR},
-            student_class = #{studentClass,jdbcType=VARCHAR},
-            student_tel   = #{studentTel,jdbcType=VARCHAR},
-            photo         = #{photo,jdbcType=LONGVARBINARY}
-        where id = #{id,jdbcType=INTEGER}
-    </update>
+
     <update id="updateByPrimaryKey" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
         update student
         set student_name  = #{studentName,jdbcType=VARCHAR},
-            student_id    = #{studentId,jdbcType=VARCHAR},
             sex           = #{sex,jdbcType=VARCHAR},
             student_qq    = #{studentQq,jdbcType=VARCHAR},
             student_class = #{studentClass,jdbcType=VARCHAR},
             student_tel   = #{studentTel,jdbcType=VARCHAR}
-        where id = #{id,jdbcType=INTEGER}
+        where student_id = #{studentId,jdbcType=VARCHAR}
     </update>
 </mapper>

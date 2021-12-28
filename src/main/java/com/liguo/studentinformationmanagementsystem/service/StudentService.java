@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author nongChaTea
@@ -28,7 +29,15 @@ public class StudentService {
 //        log.error("{}处理",students.toString());
         return students;
 
+    }
 
+    public int updateStudentMsgByStudentId(Student student){
+        int i = studentMapper.updateByPrimaryKey(student);
+        return i;
+    }
+
+    public int insertDataByExcel(List<Student> students){
+        return studentMapper.insert(students);
     }
 
 
