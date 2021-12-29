@@ -7,12 +7,14 @@ new FormModel {
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 			name: "this"
+			"title": new FormMessage( null, "this.title_5" )
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/static/image/内容排列方式.png" )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq {par l {seq {space :p:98:p, comp label1:::p::p}, seq l {space :p:45:p, par l:::p {comp label3::::60:x, comp label2::::60:x}, space u:::p, par l:::p {comp textField1::::200:x, comp passwordField1::::200:x}}, seq l {space :p:90:p, comp button1:::::x, space :p:52:p, comp button2:::p::p}}, space ::57:x}}"
-					"$verticalGroup": "par l {seq l {space :p:26:p, comp label1:::p:35:p, space u:::p, par b {comp label2::b:p:35:p, comp textField1::b:p::p}, space u:::p, par b {comp label3::b:p:29:p, comp passwordField1::b:p::p}, space s:::p, par b {comp button2::b:p::p, comp button1::b:p::p}, space ::45:x}}"
+					"$horizontalGroup": "par l {seq {par l {seq l {space :p:90:p, comp button1:::p:97:p, space :p:52:p, comp button2:::p::p}, seq {space :p:45:p, par l:::p {comp label3::::60:x, comp label2::::60:x}, space u:::p, par l:::p {comp textField1::::200:x, comp passwordField1::::200:x}}, seq l {space :p:150:p, comp label1:::p::p}}, space ::57:x}}"
+					"$verticalGroup": "par l {seq l {space :p:26:p, comp label1:::p:35:p, space u:::p, par b {comp label2::b:p:35:p, comp textField1::b:p::p}, space u:::p, par b {comp label3::b:p:29:p, comp passwordField1::b:p::p}, space s:::p, par b {comp button2::b:p::p, comp button1::b:p::p}, space :p:45:p}}"
 				} ) {
 					name: "contentPanel"
 					add( new FormComponent( "javax.swing.JLabel" ) {

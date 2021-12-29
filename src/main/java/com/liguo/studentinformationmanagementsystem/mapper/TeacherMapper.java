@@ -15,6 +15,8 @@ public interface TeacherMapper {
 
     int insert(Teacher record);
 
+    int insert(List<Teacher> teacherList);
+
     int insertSelective(Teacher record);
 
     Teacher selectByPrimaryKey(String teacherId);

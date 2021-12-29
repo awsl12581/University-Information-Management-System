@@ -6,9 +6,9 @@ package com.liguo.studentinformationmanagementsystem.view.component;
 
 import com.liguo.studentinformationmanagementsystem.entity.User;
 
-import java.util.*;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.beans.PropertyVetoException;
+import java.util.ResourceBundle;
 
 /**
  * @author unknown
@@ -32,10 +32,11 @@ public class MessagePage extends JInternalFrame {
 
         //======== this ========
         setVisible(true);
-        setIconifiable(true);
         setMaximizable(true);
         setClosable(true);
         setTitle(bundle.getString("this.title_2"));
+        setFrameIcon(new ImageIcon(getClass().getResource("/static/image/\u6807\u7b7e\uff0c\u5907\u5fd8\u5f55\uff0c\u65e5\u5fd7.png")));
+        setIconifiable(true);
         var contentPane = getContentPane();
 
         //---- label1 ----
@@ -97,7 +98,7 @@ public class MessagePage extends JInternalFrame {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }
 
-    public void setMessage(User user){
+    public void setMessage(User user) {
         this.textField1.setText(user.getUsername());
         this.textField2.setText(user.getPrivilege());
 

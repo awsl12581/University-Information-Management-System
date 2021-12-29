@@ -13,36 +13,42 @@
     <sql id="Privilege_Column_List">
         <if test="true">id, username, privilege</if>
     </sql>
-    <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
         select
-        <include refid="Base_Column_List"/>
+        <include refid="Privilege_Column_List"/>
         from user
-        where id = #{id,jdbcType=INTEGER}
+        <where>
+            <if test="username!=null and username!=''">username = #{username}</if>
+        </where>
     </select>
     <select id="selectByUserVO" resultType="com.liguo.studentinformationmanagementsystem.entity.User">
         select
         <include refid="Privilege_Column_List"/>
         from user
         where username = #{username}
-          and password = #{password}
+        and password = #{password}
     </select>
-    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
         delete
         from user
-        where id = #{id,jdbcType=INTEGER}
+        where username = #{username}
     </delete>
-    <insert id="insert" parameterType="com.liguo.studentinformationmanagementsystem.entity.User">
-        insert into user (id, username, password,
-                          privilege)
-        values (#{id,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR},
-                #{privilege,jdbcType=VARCHAR})
+    <insert id="insert" parameterType="java.util.List">
+        insert into user (username, password,
+        privilege)
+        values
+        <foreach item="item" collection="list" index="index" separator=",">
+            (
+            #{item.username},
+            #{item.password},
+            #{item.privilege}
+            )
+
+        </foreach>
     </insert>
     <insert id="insertSelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.User">
         insert into user
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                id,
-            </if>
             <if test="username != null">
                 username,
             </if>
@@ -54,9 +60,6 @@
             </if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                #{id,jdbcType=INTEGER},
-            </if>
             <if test="username != null">
                 #{username,jdbcType=VARCHAR},
             </if>
@@ -71,9 +74,6 @@
     <update id="updateByPrimaryKeySelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.User">
         update user
         <set>
-            <if test="username != null">
-                username = #{username,jdbcType=VARCHAR},
-            </if>
             <if test="password != null">
                 password = #{password,jdbcType=VARCHAR},
             </if>
@@ -81,13 +81,14 @@
                 privilege = #{privilege,jdbcType=VARCHAR},
             </if>
         </set>
-        where id = #{id,jdbcType=INTEGER}
+        where username = #{username}
     </update>
     <update id="updateByPrimaryKey" parameterType="com.liguo.studentinformationmanagementsystem.entity.User">
         update user
-        set username  = #{username,jdbcType=VARCHAR},
-            password  = #{password,jdbcType=VARCHAR},
-            privilege = #{privilege,jdbcType=VARCHAR}
-        where id = #{id,jdbcType=INTEGER}
+        <set>
+            <if test="password != null and password!=null">password  = #{password,jdbcType=VARCHAR},</if>
+            <if test="privilege != null and privilege!=null">privilege = #{privilege,jdbcType=VARCHAR},</if>
+        </set>
+        where username = #{username}
     </update>
 </mapper>

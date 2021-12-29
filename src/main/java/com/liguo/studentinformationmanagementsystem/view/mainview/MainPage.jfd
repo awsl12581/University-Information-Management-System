@@ -6,18 +6,22 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq {par l {comp dialogPane::l::932:x, seq l {space :::p, comp panel1:::::x}}, space :::p}}"
-			"$verticalGroup": "par l {seq l {comp dialogPane:::p:44:p, space :::p, comp panel1:::::x, space :::p}}"
+			"$horizontalGroup": "par l {seq {space :::p, comp panel2:::::x, space :::p}, seq l {comp dialogPane:::p::p, space :0:0:x}}"
+			"$verticalGroup": "par l {seq l {comp dialogPane:::p:44:p, space :::p, comp panel2:::::x, space :::p}}"
 		} ) {
 			name: "this"
+			"title": new FormMessage( null, "this.title_6" )
+			"iconImage": new com.jformdesigner.model.SwingIcon( 0, "/static/image/内容排列.png" )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {comp menuBar1:::p:690:p, space u:::p, comp label1:::p:216:p, space :::x}}"
-				"$verticalGroup": "par l {seq {par l:::p {comp menuBar1::::33:x, comp label1:::::x}, space :::x}}"
+				"$horizontalGroup": "par l {seq {comp menuBar1:::p:690:p, space ::45:x, comp label1:::p:164:p}}"
+				"$verticalGroup": "par l {seq {par l {seq {comp menuBar1:::p:33:p, space :0:0:x}, comp label1::l:::x}, space :::p}}"
 			} ) {
 				name: "dialogPane"
 				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				"background": new java.awt.Color( 204, 255, 204, 255 )
 				add( new FormContainer( "javax.swing.JMenuBar", new FormLayoutManager( class javax.swing.JMenuBar ) ) {
 					name: "menuBar1"
+					"background": new java.awt.Color( 255, 255, 204, 255 )
 					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 						name: "menu1"
 						"text": new FormMessage( null, "menu1.text" )
@@ -40,59 +44,12 @@ new FormModel {
 							} )
 						} )
 						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu5"
-							"text": new FormMessage( null, "menu5.text" )
-							add( new FormComponent( "javax.swing.JMenuItem" ) {
-								name: "menuItem5"
-								"text": new FormMessage( null, "menuItem5.text" )
-							} )
-						} )
-						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
 							name: "menu6"
 							"text": new FormMessage( null, "menu6.text" )
 							add( new FormComponent( "javax.swing.JMenuItem" ) {
 								name: "menuItem6"
 								"text": new FormMessage( null, "menuItem6.text" )
-							} )
-						} )
-					} )
-					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-						name: "menu3"
-						"text": new FormMessage( null, "menu3.text" )
-						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu8"
-							"text": new FormMessage( null, "menu8.text" )
-							add( new FormComponent( "javax.swing.JMenuItem" ) {
-								name: "menuItem1"
-								"text": new FormMessage( null, "menuItem1.text" )
-							} )
-						} )
-						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu9"
-							"text": new FormMessage( null, "menu9.text" )
-							add( new FormComponent( "javax.swing.JMenuItem" ) {
-								name: "menuItem2"
-								"text": new FormMessage( null, "menuItem2.text" )
-							} )
-						} )
-					} )
-					add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-						name: "menu10"
-						"text": new FormMessage( null, "menu10.text" )
-						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu11"
-							"text": new FormMessage( null, "menu11.text" )
-							add( new FormComponent( "javax.swing.JMenuItem" ) {
-								name: "menuItem8"
-								"text": new FormMessage( null, "menuItem8.text" )
-							} )
-						} )
-						add( new FormContainer( "javax.swing.JMenu", new FormLayoutManager( class javax.swing.JMenu ) ) {
-							name: "menu12"
-							"text": new FormMessage( null, "menu12.text" )
-							add( new FormComponent( "javax.swing.JMenuItem" ) {
-								name: "menuItem10"
-								"text": new FormMessage( null, "menuItem10.text" )
+								addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem6", true ) )
 							} )
 						} )
 					} )
@@ -107,29 +64,33 @@ new FormModel {
 						add( new FormComponent( "javax.swing.JMenuItem" ) {
 							name: "menuItem12"
 							"text": new FormMessage( null, "menuItem12.text" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem12", true ) )
 						} )
 						add( new FormComponent( "javax.swing.JMenuItem" ) {
 							name: "menuItem13"
 							"text": new FormMessage( null, "menuItem13.text" )
+							addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "menuItem13", true ) )
 						} )
 					} )
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label1"
+					"background": new java.awt.Color( 255, 153, 153, 255 )
 				} )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {comp desktopPane1::l::926:x}"
-				"$verticalGroup": "par l {comp desktopPane1::l::577:x}"
+				"$horizontalGroup": "par l {seq l {comp desktopPane1:::p:919:p, space :0:0:x}}"
+				"$verticalGroup": "par l {seq t {space :::p, comp desktopPane1::::561:x}}"
 			} ) {
-				name: "panel1"
+				name: "panel2"
 				add( new FormContainer( "javax.swing.JDesktopPane", new FormLayoutManager( class javax.swing.JDesktopPane ) ) {
 					name: "desktopPane1"
+					"background": new java.awt.Color( 102, 255, 255, 255 )
 				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
-			"location": new java.awt.Point( 5, 0 )
-			"size": new java.awt.Dimension( 940, 665 )
+			"location": new java.awt.Point( 5, 10 )
+			"size": new java.awt.Dimension( 930, 655 )
 		} )
 	}
 }

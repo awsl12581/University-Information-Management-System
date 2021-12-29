@@ -40,11 +40,11 @@ mybatis:
     map-underscore-to-camel-case: true
     cache-enabled: true
 
-#pagehelper设置，分页
-pagehelper:
-  helperDialect: mysql
-  #分页合理化
-  reasonable: true
-  #支持mapper接口
-  supportMethodsArguments: true
-  params: count=countSql
+##pagehelper设置，分页
+#pagehelper:
+#  helperDialect: mysql
+#  #分页合理化
+#  reasonable: true
+#  #支持mapper接口
+#  supportMethodsArguments: true
+#  params: count=countSql

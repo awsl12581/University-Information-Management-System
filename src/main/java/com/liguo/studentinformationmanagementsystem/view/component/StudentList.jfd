@@ -15,6 +15,7 @@ new FormModel {
 			"iconifiable": true
 			"maximizable": true
 			"title": new FormMessage( null, "this.title" )
+			"frameIcon": new com.jformdesigner.model.SwingIcon( 0, "/static/image/报纸，新闻，消息.png" )
 			add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
 				name: "scrollPane1"
 				add( new FormComponent( "javax.swing.JTable" ) {
@@ -62,7 +63,7 @@ new FormModel {
 				} )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :p:34:p, par l {seq l {par t {comp label2:::p::p, comp label3:::p::p}, space u:::p, par l:::p {comp textField2::::175:x, comp textField3:::::x}}, seq l {comp label4:::p::p, space u:::p, comp textField4:::p:175:p}}, space :p:39:p, par l:::p {seq {comp label7:::p::p, space ::23:x, comp textField7:::p:138:p}, seq {par t {comp label5:::p::p, comp label6:::p::p}, space s:::p, par l:::p {comp textField5::::138:x, comp textField6:::::x}}}, space :p:33:p, comp button2:::p::p, space ::273:x}}"
+				"$horizontalGroup": "par l {seq l {space :p:34:p, par l {seq l {par t {comp label2:::p::p, comp label3:::p::p}, space u:::p, par l:::p {comp textField2::::175:x, comp textField3:::::x}}, seq l {comp label4:::p::p, space u:::p, comp textField4:::p:175:p}}, space :p:39:p, par l:::p {seq {comp label7:::p::p, space ::23:x, comp textField7:::p:138:p}, seq {par t {comp label5:::p::p, comp label6:::p::p}, space s:::p, par l:::p {comp textField5::::138:x, comp textField6:::::x}}}, space :p:33:p, comp button2:::p::p, space ::272:x}}"
 				"$verticalGroup": "par l {seq l {space :p:17:p, par b {comp textField2::b:p::p, comp label2::b:p::p, comp textField5::b:p::p, comp label5::b:p::p, comp button2::b:p::p}, space :::p, par b {comp label3::b:p::p, comp textField3::b:p::p, comp label6::b:p::p, comp textField6::b:p::p}, par l {seq {space :::p, par b {comp textField4::b:p::p, comp label4::b:p::p}}, seq l {space :p:15:p, par b {comp textField7::b:p::p, comp label7::b:p::p}}}, space :::x}}"
 			} ) {
 				name: "panel1"
@@ -116,7 +117,7 @@ new FormModel {
 				} )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :p:20:p, comp label1:::p:49:p, space :::p, comp comboBox1:::p::p, space :::p, comp textField1:::p:138:p, space u:::p, comp button1:::p::p, space :p:69:p, comp button3:::p::p, space ::304:x}}"
+				"$horizontalGroup": "par l {seq l {space :p:20:p, comp label1:::p:49:p, space :::p, comp comboBox1:::p::p, space :::p, comp textField1:::p:138:p, space u:::p, comp button1:::p::p, space :p:69:p, comp button3:::p::p, space ::305:x}}"
 				"$verticalGroup": "par l {seq l {space :::p, par b {comp label1::b:p::p, comp comboBox1::b:p::p, comp textField1::b:p::p, comp button1::b:p::p, comp button3::b:p::p}, space :::x}}"
 			} ) {
 				name: "panel2"

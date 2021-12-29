@@ -11,10 +11,11 @@ new FormModel {
 		} ) {
 			name: "this"
 			"visible": true
-			"iconifiable": true
 			"maximizable": true
 			"closable": true
 			"title": new FormMessage( null, "this.title_2" )
+			"frameIcon": new com.jformdesigner.model.SwingIcon( 0, "/static/image/标签，备忘录，日志.png" )
+			"iconifiable": true
 			add( new FormComponent( "javax.swing.JLabel" ) {
 				name: "label1"
 				"text": new FormMessage( null, "label1.text_3" )

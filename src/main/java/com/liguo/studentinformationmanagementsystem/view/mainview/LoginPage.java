@@ -40,7 +40,6 @@ public class LoginPage extends JFrame {
         UserVO userVO = new UserVO(this.textField1.getText(), String.valueOf(this.passwordField1.getPassword()));
         System.out.println(userVO.toString());
         User user = userService.userLogin(userVO);
-        System.out.println(user.toString());
         if (user != null && !"".equals(user)) {
             //进入主框架
             mainPage.setVisible(true);
@@ -91,17 +90,21 @@ public class LoginPage extends JFrame {
         button2 = new JButton();
 
         //======== this ========
+        setTitle(bundle.getString("this.title_5"));
+        setIconImage(new ImageIcon(getClass().getResource("/static/image/\u5185\u5bb9\u6392\u5217\u65b9\u5f0f.png")).getImage());
         var contentPane = getContentPane();
         contentPane.setLayout(new BorderLayout());
 
         //======== dialogPane ========
         {
             dialogPane.setBorder(new EmptyBorder(12, 12, 12, 12));
-            dialogPane.setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder(
-            0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder
-            . BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color.
-            red) ,dialogPane. getBorder( )) ); dialogPane. addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .
-            beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+            dialogPane.setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax
+            . swing. border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing
+            .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .
+            Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .red
+            ) ,dialogPane. getBorder () ) ); dialogPane. addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override
+            public void propertyChange (java . beans. PropertyChangeEvent e) { if( "bord\u0065r" .equals ( e. getPropertyName (
+            ) ) )throw new RuntimeException( ) ;} } );
             dialogPane.setLayout(new BorderLayout());
 
             //======== contentPanel ========
@@ -135,8 +138,10 @@ public class LoginPage extends JFrame {
                         .addGroup(contentPanelLayout.createSequentialGroup()
                             .addGroup(contentPanelLayout.createParallelGroup()
                                 .addGroup(contentPanelLayout.createSequentialGroup()
-                                    .addGap(98, 98, 98)
-                                    .addComponent(label1))
+                                    .addGap(90, 90, 90)
+                                    .addComponent(button1, GroupLayout.PREFERRED_SIZE, 97, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(52, 52, 52)
+                                    .addComponent(button2))
                                 .addGroup(contentPanelLayout.createSequentialGroup()
                                     .addGap(45, 45, 45)
                                     .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
@@ -147,10 +152,8 @@ public class LoginPage extends JFrame {
                                         .addComponent(textField1, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
                                         .addComponent(passwordField1, GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)))
                                 .addGroup(contentPanelLayout.createSequentialGroup()
-                                    .addGap(90, 90, 90)
-                                    .addComponent(button1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addGap(52, 52, 52)
-                                    .addComponent(button2)))
+                                    .addGap(150, 150, 150)
+                                    .addComponent(label1)))
                             .addContainerGap(57, Short.MAX_VALUE))
                 );
                 contentPanelLayout.setVerticalGroup(
@@ -170,7 +173,7 @@ public class LoginPage extends JFrame {
                             .addGroup(contentPanelLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                 .addComponent(button2)
                                 .addComponent(button1))
-                            .addContainerGap(45, Short.MAX_VALUE))
+                            .addGap(45, 45, 45))
                 );
             }
             dialogPane.add(contentPanel, BorderLayout.CENTER);

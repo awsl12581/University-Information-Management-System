@@ -5,17 +5,19 @@ import com.liguo.studentinformationmanagementsystem.pojo.UserVO;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 //@Mapper
 @Repository
 public interface UserMapper {
 
-    int deleteByPrimaryKey(Integer id);
+    int deleteByPrimaryKey(String username);
 
-    int insert(User record);
+    int insert(List<User> users);
 
     int insertSelective(User record);
 
-    User selectByPrimaryKey(Integer id);
+    List<User> selectByPrimaryKey(String username);
 
     User selectByUserVO(UserVO userVO);
 

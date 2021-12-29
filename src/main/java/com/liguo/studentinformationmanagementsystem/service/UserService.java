@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author nongChaTea
@@ -32,5 +33,20 @@ public class UserService {
         return user1;
     }
 
+    public int deleteUserByUsername(String username){
+        return userMapper.deleteByPrimaryKey(username);
+    }
 
+    public List<User> selectByUsername(String username){
+        return userMapper.selectByPrimaryKey(username);
+    }
+
+
+    public int updatePrivilege(User user) {
+        return userMapper.updateByPrimaryKey(user);
+    }
+
+    public int insertDataByExcel(List<User> users) {
+        return userMapper.insert(users);
+    }
 }

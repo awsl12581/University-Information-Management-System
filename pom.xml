@@ -75,11 +75,11 @@
         <!--        注意使用springboot适配的pagehelper，否则需要自己注入bean-->
         <!--分页插件-->
 <!--        注意分页插件要与springboot版本对应，不然会报循环依赖错误-->
-        <dependency>
-            <groupId>com.github.pagehelper</groupId>
-            <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>1.4.1</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.pagehelper</groupId>-->
+<!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+<!--            <version>1.4.1</version>-->
+<!--        </dependency>-->
 
 <!--        api收集及展示-->
         <dependency>

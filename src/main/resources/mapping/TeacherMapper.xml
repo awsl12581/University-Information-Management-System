@@ -36,13 +36,20 @@
     where teacher_id = #{teacherId}
   </delete>
 
-  <insert id="insert" parameterType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
+  <insert id="insert" parameterType="java.util.List">
     insert into teacher (teacher_id, teacher_name,
       sex, teacher_tel, faculty
       )
-    values (#{teacherId,jdbcType=VARCHAR}, #{teacherName,jdbcType=VARCHAR},
-      #{sex,jdbcType=VARCHAR}, #{teacherTel,jdbcType=VARCHAR}, #{faculty,jdbcType=VARCHAR}
+      values
+    <foreach collection="list" item="item" index="index" separator=",">
+      (
+      #{item.teacherId},
+      #{item.teacherName},
+      #{item.sex},
+      #{item.teacherTel},
+      #{item.faculty}
       )
+    </foreach>
   </insert>
 
   <insert id="insertSelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
@@ -92,9 +99,6 @@
   <update id="updateByPrimaryKeySelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Teacher">
     update teacher
     <set>
-      <if test="teacherId != null">
-        teacher_id = #{teacherId,jdbcType=VARCHAR},
-      </if>
       <if test="teacherName != null">
         teacher_name = #{teacherName,jdbcType=VARCHAR},
       </if>

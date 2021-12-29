@@ -1,0 +1,55 @@
+JFDML JFormDesigner: "7.0.5.0.404" Java: "11.0.12" encoding: "UTF-8"
+
+new FormModel {
+	"i18n.autoExternalize": true
+	"i18n.bundleName": "form"
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JInternalFrame", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq {par l {seq l {space :p:134:p, comp button1:::p::p}, seq l {space :p:26:p, par t {comp label3:::p::p, par l {comp label1::l:p::p, comp label2::l:p::p}}, space s:::p, par l:::p {comp passwordField1::::188:x, comp passwordField2::::188:x, comp passwordField3::l::188:x}}, seq l {space :p:134:p, comp button2:::p::p}}, space ::108:x}}"
+			"$verticalGroup": "par l {seq l {space :p:41:p, par b {comp label1::b:p::p, comp passwordField1::b:p::p}, space s:::p, comp button1:::p::p, space s:::p, par b {comp label2::b:p::p, comp passwordField2::b:p::p}, space s:::p, par b {comp label3::b:p::p, comp passwordField3::b:p::p}, space s:::p, comp button2:::p::p, space ::17:x}}"
+		} ) {
+			name: "this"
+			"visible": true
+			"title": new FormMessage( null, "this.title_7" )
+			"iconifiable": true
+			"closable": true
+			"maximizable": true
+			"resizable": true
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label1"
+				"text": new FormMessage( null, "label1.text_6" )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button1"
+				"text": new FormMessage( null, "button1.text_5" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button1", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label2"
+				"text": new FormMessage( null, "label2.text_6" )
+			} )
+			add( new FormComponent( "javax.swing.JLabel" ) {
+				name: "label3"
+				"text": new FormMessage( null, "label3.text_6" )
+			} )
+			add( new FormComponent( "javax.swing.JButton" ) {
+				name: "button2"
+				"text": new FormMessage( null, "button2.text_5" )
+				addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "button2", true ) )
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordField1"
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordField2"
+			} )
+			add( new FormComponent( "javax.swing.JPasswordField" ) {
+				name: "passwordField3"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 400, 300 )
+		} )
+	}
+}
