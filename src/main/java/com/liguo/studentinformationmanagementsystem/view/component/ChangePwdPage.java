@@ -1,6 +1,3 @@
-/*
- * Created by JFormDesigner on Tue Dec 28 21:18:25 CST 2021
- */
 
 package com.liguo.studentinformationmanagementsystem.view.component;
 
@@ -10,24 +7,21 @@ import com.liguo.studentinformationmanagementsystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
-import java.awt.*;
-import java.awt.event.*;
-import java.util.*;
 import javax.swing.*;
-import javax.swing.GroupLayout;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.util.ResourceBundle;
 
-/**
- * @author unknown
- */
 @Controller
 public class ChangePwdPage extends JInternalFrame {
 
     @Autowired
     UserService userService;
 
-    private boolean isReady=false;
+    private boolean isReady = false;
 
     private User user;
+
     public void setUser(User user) {
         this.user = user;
     }
@@ -37,43 +31,43 @@ public class ChangePwdPage extends JInternalFrame {
     }
 
     private void button1(ActionEvent e) {
-        isReady=false;
+        isReady = false;
         String s = String.valueOf(this.passwordField1.getPassword());
-        UserVO userVO=new UserVO();
+        UserVO userVO = new UserVO();
         userVO.setUsername(this.user.getUsername());
         userVO.setPassword(s);
         User user = userService.userLogin(userVO);
-        if(user == null || "".equals(user)) {
-            JOptionPane.showMessageDialog(null,"密码错误哦");
+        if (user == null || "".equals(user)) {
+            JOptionPane.showMessageDialog(null, "密码错误哦");
         }
 
-        isReady=true;
+        isReady = true;
         this.button1.setBackground(Color.green);
     }
 
     private void button2(ActionEvent e) {
-        if (!isReady){
-            JOptionPane.showMessageDialog(null,"先验证密码哦");
+        if (!isReady) {
+            JOptionPane.showMessageDialog(null, "先验证密码哦");
             return;
         }
-        String s1=String.valueOf(this.passwordField2.getPassword());
-        String s2=String.valueOf(this.passwordField3.getPassword());
-        System.out.println(s1+"{************}"+s2);
-        if ((!s1.equals(s2))||s1==null||s2==null||"".equals(s1)||"".equals(s2)){
-            JOptionPane.showMessageDialog(null,"新密码设置有问题");
+        String s1 = String.valueOf(this.passwordField2.getPassword());
+        String s2 = String.valueOf(this.passwordField3.getPassword());
+        System.out.println(s1 + "{************}" + s2);
+        if ((!s1.equals(s2)) || s1 == null || s2 == null || "".equals(s1) || "".equals(s2)) {
+            JOptionPane.showMessageDialog(null, "新密码设置有问题");
             return;
         }
-        isReady=false;
+        isReady = false;
         this.button1.setBackground(Color.red);
 
-        User user1=new User();
+        User user1 = new User();
         user1.setUsername(this.user.getUsername());
         user1.setPassword(s1);
         int i = userService.updatePrivilege(user1);
-        if (i!=0){
-            JOptionPane.showMessageDialog(null,"更改成功");
-        }else{
-            JOptionPane.showMessageDialog(null,"好像没有这个信息");
+        if (i != 0) {
+            JOptionPane.showMessageDialog(null, "更改成功");
+        } else {
+            JOptionPane.showMessageDialog(null, "好像没有这个信息");
         }
 
     }
@@ -120,49 +114,49 @@ public class ChangePwdPage extends JInternalFrame {
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
-            contentPaneLayout.createParallelGroup()
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGroup(contentPaneLayout.createParallelGroup()
+                contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(134, 134, 134)
-                            .addComponent(button1))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(26, 26, 26)
-                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                .addComponent(label3)
                                 .addGroup(contentPaneLayout.createParallelGroup()
-                                    .addComponent(label1)
-                                    .addComponent(label2)))
-                            .addGap(18, 18, 18)
-                            .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                .addComponent(passwordField1, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                                .addComponent(passwordField2, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
-                                .addComponent(passwordField3, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addGap(134, 134, 134)
-                            .addComponent(button2)))
-                    .addContainerGap(108, Short.MAX_VALUE))
+                                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                                .addGap(134, 134, 134)
+                                                .addComponent(button1))
+                                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                                .addGap(26, 26, 26)
+                                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(label3)
+                                                        .addGroup(contentPaneLayout.createParallelGroup()
+                                                                .addComponent(label1)
+                                                                .addComponent(label2)))
+                                                .addGap(18, 18, 18)
+                                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                                        .addComponent(passwordField1, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                                                        .addComponent(passwordField2, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)
+                                                        .addComponent(passwordField3, GroupLayout.DEFAULT_SIZE, 188, Short.MAX_VALUE)))
+                                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                                .addGap(134, 134, 134)
+                                                .addComponent(button2)))
+                                .addContainerGap(108, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
-            contentPaneLayout.createParallelGroup()
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(41, 41, 41)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label1)
-                        .addComponent(passwordField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addComponent(button1)
-                    .addGap(18, 18, 18)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label2)
-                        .addComponent(passwordField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label3)
-                        .addComponent(passwordField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(18, 18, 18)
-                    .addComponent(button2)
-                    .addContainerGap(17, Short.MAX_VALUE))
+                contentPaneLayout.createParallelGroup()
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                .addGap(41, 41, 41)
+                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(label1)
+                                        .addComponent(passwordField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(button1)
+                                .addGap(18, 18, 18)
+                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(label2)
+                                        .addComponent(passwordField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(label3)
+                                        .addComponent(passwordField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(18, 18, 18)
+                                .addComponent(button2)
+                                .addContainerGap(17, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }

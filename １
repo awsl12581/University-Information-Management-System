@@ -1,0 +1,45 @@
+└─com
+    └─liguo
+        └─studentinformationmanagementsystem
+            │  StudentInformationManagementSystemApplication.java   //启动的主类，用来启动springboot
+            │
+            ├─config
+            │      SwaggerConfig.java  //api自动生成
+            │
+            ├─controller
+            │      Test1.java  //测试api的类
+            │
+            ├─entity
+            │      Student.java  //student实体类，用来与数据库对应，添加@Data注解（lombok）和@ExcelProperty
+            │      Teacher.java  //student实体类，用来与数据库对应，添加@Data注解（lombok）和@ExcelProperty
+            │      User.java     //student实体类，用来与数据库对应，添加@Data注解（lombok）
+            │
+            ├─mapper
+            │      StudentMapper.java  //mybatis对应mapper，用来操作mybatis，代替dao层的操作
+            │      TeacherMapper.java
+            │      UserMapper.java
+            │
+            ├─pojo
+            │      StudentVO.java  //VO视图，用来接收来自页面的数据，这些数据可能是entity的一部分但被封装起来
+            │      TeacherVO.java
+            │      UserVO.java
+            │
+            ├─service
+            │      StudentService.java //service层用来处理相关的逻辑
+            │      TeacherService.java
+            │      UserService.java
+            │
+            ├─util
+            │      PermissionCheck.java //工具类，本类用于验证权限是否符合规范
+            │
+            └─view
+                ├─component            //组件，用来在主页面上进行展示
+                │      ChangePwdPage.java
+                │      MessagePage.java
+                │      StudentList.java
+                │      TeacherList.java
+                │      UserPage.java
+                │
+                └─mainview           //主页面，为各种操作提供基础框架
+                        LoginPage.java
+                        MainPage.java

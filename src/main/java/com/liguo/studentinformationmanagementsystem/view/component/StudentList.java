@@ -1,9 +1,4 @@
-/*
- * Created by JFormDesigner on Mon Dec 27 19:10:06 CST 2021
- */
-
 package com.liguo.studentinformationmanagementsystem.view.component;
-
 import com.alibaba.excel.EasyExcel;
 import com.alibaba.excel.read.listener.PageReadListener;
 import com.liguo.studentinformationmanagementsystem.entity.Student;
@@ -24,9 +19,6 @@ import java.util.List;
 import java.util.ResourceBundle;
 import java.util.Vector;
 
-/**
- * @author unknown
- */
 @Controller
 public class StudentList extends JInternalFrame {
 

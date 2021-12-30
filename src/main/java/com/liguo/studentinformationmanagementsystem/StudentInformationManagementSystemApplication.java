@@ -4,11 +4,10 @@ import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 /**
- * @author ASUS
+ * @author 201917712
  */
 @SpringBootApplication
 @EnableTransactionManagement
@@ -16,7 +15,8 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 public class StudentInformationManagementSystemApplication {
 
 
-    public static AnnotationConfigApplicationContext annotationConfigApplicationContext2=null;
+    public static AnnotationConfigApplicationContext annotationConfigApplicationContext2 = null;
+
     public static void main(String[] args) {
         SpringApplicationBuilder builder = new SpringApplicationBuilder(StudentInformationManagementSystemApplication.class);
         builder.headless(false).run(args);

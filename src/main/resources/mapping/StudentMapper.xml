@@ -57,83 +57,37 @@
     <insert id="insertSelective" parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
         insert into student
         <trim prefix="(" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                id,
-            </if>
-            <if test="studentName != null">
-                student_name,
-            </if>
-            <if test="studentId != null">
-                student_id,
-            </if>
-            <if test="sex != null">
-                sex,
-            </if>
-            <if test="studentQq != null">
-                student_qq,
-            </if>
-            <if test="studentClass != null">
-                student_class,
-            </if>
-            <if test="studentTel != null">
-                student_tel,
-            </if>
-            <if test="photo != null">
-                photo,
-            </if>
+            <if test="id != null">id,</if>
+            <if test="studentName != null">student_name,</if>
+            <if test="studentId != null">student_id,</if>
+            <if test="sex != null">sex,</if>
+            <if test="studentQq != null">student_qq,</if>
+            <if test="studentClass != null">student_class,</if>
+            <if test="studentTel != null">student_tel,</if>
+            <if test="photo != null">photo,</if>
         </trim>
         <trim prefix="values (" suffix=")" suffixOverrides=",">
-            <if test="id != null">
-                #{id,jdbcType=INTEGER},
-            </if>
-            <if test="studentName != null">
-                #{studentName,jdbcType=VARCHAR},
-            </if>
-            <if test="studentId != null">
-                #{studentId,jdbcType=VARCHAR},
-            </if>
-            <if test="sex != null">
-                #{sex,jdbcType=VARCHAR},
-            </if>
-            <if test="studentQq != null">
-                #{studentQq,jdbcType=VARCHAR},
-            </if>
-            <if test="studentClass != null">
-                #{studentClass,jdbcType=VARCHAR},
-            </if>
-            <if test="studentTel != null">
-                #{studentTel,jdbcType=VARCHAR},
-            </if>
-            <if test="photo != null">
-                #{photo,jdbcType=LONGVARBINARY},
-            </if>
+            <if test="id != null">#{id,jdbcType=INTEGER},</if>
+            <if test="studentName != null">#{studentName,jdbcType=VARCHAR},</if>
+            <if test="studentId != null">#{studentId,jdbcType=VARCHAR},</if>
+            <if test="sex != null">#{sex,jdbcType=VARCHAR},</if>
+            <if test="studentQq != null">#{studentQq,jdbcType=VARCHAR},</if>
+            <if test="studentClass != null">#{studentClass,jdbcType=VARCHAR},</if>
+            <if test="studentTel != null">#{studentTel,jdbcType=VARCHAR},</if>
+            <if test="photo != null">#{photo,jdbcType=LONGVARBINARY},</if>
         </trim>
     </insert>
     <update id="updateByPrimaryKeySelective"
             parameterType="com.liguo.studentinformationmanagementsystem.entity.Student">
         update student
         <set>
-            <if test="studentName != null">
-                student_name = #{studentName,jdbcType=VARCHAR},
-            </if>
-            <if test="studentId != null">
-                student_id = #{studentId,jdbcType=VARCHAR},
-            </if>
-            <if test="sex != null">
-                sex = #{sex,jdbcType=VARCHAR},
-            </if>
-            <if test="studentQq != null">
-                student_qq = #{studentQq,jdbcType=VARCHAR},
-            </if>
-            <if test="studentClass != null">
-                student_class = #{studentClass,jdbcType=VARCHAR},
-            </if>
-            <if test="studentTel != null">
-                student_tel = #{studentTel,jdbcType=VARCHAR},
-            </if>
-            <if test="photo != null">
-                photo = #{photo,jdbcType=LONGVARBINARY},
-            </if>
+            <if test="studentName != null">student_name = #{studentName,jdbcType=VARCHAR},</if>
+            <if test="studentId != null">student_id = #{studentId,jdbcType=VARCHAR},</if>
+            <if test="sex != null">sex = #{sex,jdbcType=VARCHAR},</if>
+            <if test="studentQq != null">student_qq = #{studentQq,jdbcType=VARCHAR},</if>
+            <if test="studentClass != null">student_class = #{studentClass,jdbcType=VARCHAR},</if>
+            <if test="studentTel != null">student_tel = #{studentTel,jdbcType=VARCHAR},</if>
+            <if test="photo != null">photo = #{photo,jdbcType=LONGVARBINARY},</if>
         </set>
         where id = #{id,jdbcType=INTEGER}
     </update>

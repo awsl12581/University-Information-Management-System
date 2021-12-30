@@ -23,12 +23,8 @@ public class StudentService {
     StudentMapper studentMapper;
 
     public ArrayList<Student> findStudentOrListByStudentVO(StudentVO studentVO){
-//        log.error("{}已经开始准备处理{}",studentVO.toString(),studentMapper==null);
         ArrayList<Student> students = studentMapper.selectByStudent(studentVO);
-//        ArrayList<Student> students = studentMapper.selectByPrimaryKey(1);
-//        log.error("{}处理",students.toString());
         return students;
-
     }
 
     public int updateStudentMsgByStudentId(Student student){
@@ -39,6 +35,4 @@ public class StudentService {
     public int insertDataByExcel(List<Student> students){
         return studentMapper.insert(students);
     }
-
-
 }

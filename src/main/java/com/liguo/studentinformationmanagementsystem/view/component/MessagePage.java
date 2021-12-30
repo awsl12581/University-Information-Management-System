@@ -1,18 +1,10 @@
-/*
- * Created by JFormDesigner on Tue Dec 28 00:28:24 CST 2021
- */
-
 package com.liguo.studentinformationmanagementsystem.view.component;
 
 import com.liguo.studentinformationmanagementsystem.entity.User;
 
 import javax.swing.*;
-import java.beans.PropertyVetoException;
 import java.util.ResourceBundle;
 
-/**
- * @author unknown
- */
 public class MessagePage extends JInternalFrame {
     public MessagePage() {
         initComponents();
@@ -60,40 +52,40 @@ public class MessagePage extends JInternalFrame {
         GroupLayout contentPaneLayout = new GroupLayout(contentPane);
         contentPane.setLayout(contentPaneLayout);
         contentPaneLayout.setHorizontalGroup(
-            contentPaneLayout.createParallelGroup()
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(65, 65, 65)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                contentPaneLayout.createParallelGroup()
                         .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label1)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label2)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField2))
-                        .addGroup(contentPaneLayout.createSequentialGroup()
-                            .addComponent(label3)
-                            .addGap(18, 18, 18)
-                            .addComponent(textField3)))
-                    .addContainerGap(64, Short.MAX_VALUE))
+                                .addGap(65, 65, 65)
+                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                                .addComponent(label1)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(textField1, GroupLayout.PREFERRED_SIZE, 199, GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                                .addComponent(label2)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(textField2))
+                                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                                .addComponent(label3)
+                                                .addGap(18, 18, 18)
+                                                .addComponent(textField3)))
+                                .addContainerGap(64, Short.MAX_VALUE))
         );
         contentPaneLayout.setVerticalGroup(
-            contentPaneLayout.createParallelGroup()
-                .addGroup(contentPaneLayout.createSequentialGroup()
-                    .addGap(43, 43, 43)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label1)
-                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(23, 23, 23)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label2)
-                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addGap(25, 25, 25)
-                    .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                        .addComponent(label3)
-                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(39, Short.MAX_VALUE))
+                contentPaneLayout.createParallelGroup()
+                        .addGroup(contentPaneLayout.createSequentialGroup()
+                                .addGap(43, 43, 43)
+                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(label1)
+                                        .addComponent(textField1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(23, 23, 23)
+                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(label2)
+                                        .addComponent(textField2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addGap(25, 25, 25)
+                                .addGroup(contentPaneLayout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(label3)
+                                        .addComponent(textField3, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE))
+                                .addContainerGap(39, Short.MAX_VALUE))
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents
     }

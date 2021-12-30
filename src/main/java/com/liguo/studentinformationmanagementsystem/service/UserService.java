@@ -1,16 +1,12 @@
 package com.liguo.studentinformationmanagementsystem.service;
 
-import com.liguo.studentinformationmanagementsystem.entity.Student;
 import com.liguo.studentinformationmanagementsystem.entity.User;
-import com.liguo.studentinformationmanagementsystem.mapper.StudentMapper;
 import com.liguo.studentinformationmanagementsystem.mapper.UserMapper;
-import com.liguo.studentinformationmanagementsystem.pojo.StudentVO;
 import com.liguo.studentinformationmanagementsystem.pojo.UserVO;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -23,24 +19,25 @@ public class UserService {
 
     @Autowired
     UserMapper userMapper;
+
     /**
      * 用户登录
+     *
      * @param user
      * @return 返回一个user实体，但是没有密码
      */
-    public User userLogin(UserVO user){
+    public User userLogin(UserVO user) {
         User user1 = userMapper.selectByUserVO(user);
         return user1;
     }
 
-    public int deleteUserByUsername(String username){
+    public int deleteUserByUsername(String username) {
         return userMapper.deleteByPrimaryKey(username);
     }
 
-    public List<User> selectByUsername(String username){
+    public List<User> selectByUsername(String username) {
         return userMapper.selectByPrimaryKey(username);
     }
-
 
     public int updatePrivilege(User user) {
         return userMapper.updateByPrimaryKey(user);
